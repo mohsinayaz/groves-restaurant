@@ -1,0 +1,55 @@
+<section class="text-center py-12 px-4">
+  <div>
+    <h2 class="text-4xl text-white mb-4">Mall Of: Endless Possibilities</h2>
+    <p class="text-sm text-gray-300 max-w-3xl mx-auto mb-12">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book.
+    </p>
+  </div>
+  <div class="relative max-w-4xl mx-auto">
+    <video
+      class="w-full rounded-lg"
+      poster="/video-thumbnail.png"
+      #videoPlayer
+      [muted]="true"
+      loop
+    >
+      <source src="/sample-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <button
+      *ngIf="!isPlaying"
+      (click)="playVideo(videoPlayer)"
+      class="absolute top-[40%] left-[44%] inset-0 flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-lg hover:scale-105 transition transform"
+      aria-label="Play Video"
+    >
+      <svg
+        class="w-12 h-12"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </button>
+  </div>
+  <div class="mt-10">
+    <div
+      class="max-w-4xl mx-auto w-full p-8 rounded-xl bg-[#242f12] flex flex-col items-start text-white"
+    >
+      <p class="text-xs">25 SR/GUEST</p>
+      <div class="flex my-4 justify-between w-full items-center">
+        <h3>Get your General Access Ticket</h3>
+        <p class="text-3xl hidden md:block">→</p>
+      </div>
+      <p class="text-left w-2/3">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text
+      </p>
+      <p class="text-3xl text-right w-full md:hidden block">→</p>
+    </div>
+  </div>
+</section>

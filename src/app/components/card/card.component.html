@@ -1,0 +1,17 @@
+<div class="p-2 my-2 rounded-lg max-lg:w-full w-[95%] bg-[#293516]">
+  <img
+    [src]="imageData().path"
+    class="w-full h-[250px] max-lg:h-[300px] rounded-lg"
+  />
+  <div class="flex text-white justify-between items-center p-4">
+    <div>
+      <h1 class="mb-2 text-lg max-lg:text-3xl">{{ imageData().name }}</h1>
+      <button
+        class="bg-gold border border-none text-sm rounded-xl text-white px-3 py-2 rounded"
+      >
+        <p class="text-xs">100 SR PER GUEST</p>
+      </button>
+    </div>
+    <p class="text-2xl max-lg:text-4xl">→</p>
+  </div>
+</div>

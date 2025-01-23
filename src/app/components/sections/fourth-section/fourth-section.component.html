@@ -1,0 +1,18 @@
+<section class="mt-20">
+  <div class="max-w-5xl mx-auto">
+    <div class="mx-auto text-white flex flex-col items-center">
+      <h1 class="text-5xl text-center mb-6">Experience the Finest Cuisine</h1>
+      <p class="text-center w-3/4">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
+    </div>
+    <div class="flex flex-wrap justify-between w-full mt-12">
+      <div *ngFor="let image of images" class="w-1/2 max-lg:w-full max-lg:px-4">
+        <app-card [imageData]="image"></app-card>
+      </div>
+    </div>
+  </div>
+</section>

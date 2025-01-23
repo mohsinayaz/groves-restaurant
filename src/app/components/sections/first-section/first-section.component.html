@@ -1,0 +1,320 @@
+<div class="main-container h-screen">
+  <div class="hidden md:block">
+    <header class="text-white flex justify-between items-center py-4 px-20">
+      <img src="/groves-logo.png" alt="The Groves Logo" class="w-60" />
+
+      <div class="actions flex items-center gap-2">
+        <div class="flex h-full items-end">
+          <img src="/tictok-icon.png" alt="Visa" class="w-5 h-5 mr-6" />
+          <img
+            src="/instagram-icon.png"
+            alt="Mastercard"
+            class="w-5 h-5 mr-6"
+          />
+          <img
+            src="/x-social-icon.png"
+            alt="American Express"
+            class="w-5 h-5 mr-6"
+          />
+          <img
+            src="/snapchat-icon.png"
+            alt="American Express"
+            class="w-5 h-5 mr-6"
+          />
+        </div>
+        <button
+          class="bg-gold text-white text-sm border border-none rounded-lg text-black px-12 py-2"
+        >
+          Log In
+        </button>
+        <div class="relative">
+          <!-- Dropdown Trigger -->
+          <button
+            class="flex items-center w-full p-2 text-white rounded shadow focus:outline-none"
+            (click)="toggleDropdown()"
+          >
+            <img
+              [src]="selectedLanguage.flag"
+              [alt]="selectedLanguage.label"
+              class="w-5 h-5 mr-4"
+            />
+            {{ selectedLanguage.label }}
+            <svg
+              class="w-4 h-4 ml-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <ul
+            class="absolute z-10 mt-2 w-full bg-white rounded shadow text-black"
+            [class.hidden]="!isDropdownOpen"
+          >
+            <li
+              class="flex items-center p-2 hover:bg-gray-200 cursor-pointer"
+              (click)="
+                changeLanguage(
+                  'en',
+                  'https://flagcdn.com/w40/gb.png',
+                  'English'
+                )
+              "
+            >
+              <img
+                src="https://flagcdn.com/w40/gb.png"
+                alt="English"
+                class="w-5 h-5 mr-2"
+              />
+              English
+            </li>
+            <li
+              class="flex items-center p-2 hover:bg-gray-200 cursor-pointer"
+              (click)="
+                changeLanguage('ar', 'https://flagcdn.com/w40/sa.png', 'Arabic')
+              "
+            >
+              <img
+                src="https://flagcdn.com/w40/sa.png"
+                alt="Arabic"
+                class="w-5 h-5 mr-2"
+              />
+              Arabic
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <header class="sub-header border-t-4 border-b-4 border-gray-400 py-4">
+      <nav class="hidden md:flex gap-4 flex justify-evenly">
+        <a href="#" class="text-gray-300 font-semibold hover:text-gold"
+          >DINE WITH US</a
+        >
+        <a href="#" class="text-gray-300 font-semibold hover:text-gold"
+          >PLAN YOUR VISIT</a
+        >
+        <a href="#" class="text-gray-300 font-semibold hover:text-gold"
+          >EVENTS</a
+        >
+        <a href="#" class="text-gray-300 font-semibold hover:text-gold"
+          >VIEW GROVES MAP</a
+        >
+        <a href="#" class="text-gray-300 font-semibold hover:text-gold"
+          >OUR STORY</a
+        >
+        <a href="#" class="text-gray-300 font-semibold hover:text-gold"
+          >CONTACT US</a
+        >
+      </nav>
+    </header>
+  </div>
+  <div class="carousel-container z-0 w-full max-lg:h-full h-[80%]">
+    <div class="flex md:hidden z-10 w-full absolute">
+      <div class="w-full">
+        <header class="flex items-center justify-between p-4 text-white">
+          <img src="/groves-logo.png" alt="The Groves Logo" class="w-60" />
+          <button class="text-3xl text-gold" (click)="toggleMenu()">☰</button>
+        </header>
+        <!-- Sidebar Menu -->
+        <div
+          class="fixed overflow-hidden top-0 right-0 flex flex-col h-screen w-full bg-[#141D02] text-white transform transition-transform"
+          [class.translate-x-0]="isMenuOpen"
+          [class.translate-x-full]="!isMenuOpen"
+        >
+          <div
+            class="flex justify-between items-center h-24 relative px-4 border-b-2 border-gray-400"
+          >
+            <img src="/groves-logo.png" alt="The Groves Logo" class="w-60" />
+            <button
+              class="absolute top-8 right-12 text-3xl"
+              (click)="toggleMenu()"
+            >
+              <p class="text-gold">ⲭ</p>
+            </button>
+          </div>
+          <ul class="flex flex-col">
+            <li class="border-b-2 border-gray-400 h-16 flex items-center">
+              <a
+                href="#"
+                (click)="toggleMenu()"
+                class="block px-6 hover:text-gold"
+                >Dine with Us</a
+              >
+            </li>
+            <li class="border-b-2 border-gray-400 h-16 flex items-center">
+              <a
+                href="#"
+                (click)="toggleMenu()"
+                class="block px-6 hover:text-gold"
+                >Plan Your Visit</a
+              >
+            </li>
+            <li class="border-b-2 border-gray-400 h-16 flex items-center">
+              <a
+                href="#"
+                (click)="toggleMenu()"
+                class="block px-6 hover:text-gold"
+                >Events</a
+              >
+            </li>
+            <li class="border-b-2 border-gray-400 h-16 flex items-center">
+              <a
+                href="#"
+                (click)="toggleMenu()"
+                class="block px-6 hover:text-gold"
+                >View Groves Map</a
+              >
+            </li>
+            <li class="border-b-2 border-gray-400 h-16 flex items-center">
+              <a
+                href="#"
+                (click)="toggleMenu()"
+                class="block px-6 hover:text-gold"
+                >Our Story</a
+              >
+            </li>
+            <li class="border-b-2 border-gray-400 h-16 flex items-center">
+              <a
+                href="#"
+                (click)="toggleMenu()"
+                class="block px-6 hover:text-gold"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+          <div class="flex flex-col flex-1 mb-4 mx-6">
+            <div class="mt-6 relative">
+              <!-- Dropdown Trigger -->
+              <button
+                class="flex items-center w-1/2 p-2 text-white rounded shadow focus:outline-none"
+                (click)="toggleDropdown()"
+              >
+                <img
+                  [src]="selectedLanguage.flag"
+                  [alt]="selectedLanguage.label"
+                  class="w-5 h-5 mr-2"
+                />
+                {{ selectedLanguage.label }}
+                <svg
+                  class="ml-auto w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <ul
+                class="absolute z-10 mt-2 w-1/2 bg-white rounded shadow text-black"
+                [class.hidden]="!isDropdownOpen"
+              >
+                <li
+                  class="flex items-center p-2 hover:bg-gray-200 cursor-pointer"
+                  (click)="
+                    changeLanguage(
+                      'en',
+                      'https://flagcdn.com/w40/gb.png',
+                      'English'
+                    )
+                  "
+                >
+                  <img
+                    src="https://flagcdn.com/w40/gb.png"
+                    alt="English"
+                    class="w-5 h-5 mr-2"
+                  />
+                  English
+                </li>
+                <li
+                  class="flex items-center p-2 hover:bg-gray-200 cursor-pointer"
+                  (click)="
+                    changeLanguage(
+                      'ar',
+                      'https://flagcdn.com/w40/sa.png',
+                      'Arabic'
+                    )
+                  "
+                >
+                  <img
+                    src="https://flagcdn.com/w40/sa.png"
+                    alt="Arabic"
+                    class="w-5 h-5 mr-2"
+                  />
+                  Arabic
+                </li>
+              </ul>
+            </div>
+            <div class="mt-6 h-12 flex items-center">
+              <button class="w-1/2 py-2 bg-yellow-500 rounded-xl">
+                Log in
+              </button>
+            </div>
+            <div class="flex-1 flex items-end">
+              <img src="/tictok-icon.png" alt="Visa" class="w-5 h-5 mr-6" />
+              <img
+                src="/instagram-icon.png"
+                alt="Mastercard"
+                class="w-5 h-5 mr-6"
+              />
+              <img
+                src="/x-social-icon.png"
+                alt="American Express"
+                class="w-5 h-5 mr-6"
+              />
+              <img
+                src="/snapchat-icon.png"
+                alt="American Express"
+                class="w-5 h-5 mr-6"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ngx-slick-carousel
+      class="carousel max-lg:w-full w-[50%] h-full"
+      [config]="slideConfig"
+      [ngClass]="isMenuOpen ? 'hidden' : ''"
+    >
+      <!-- Slide 1 -->
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide h-full">
+        <div class="relative">
+          <div
+            class="absolute inset-0 flex flex-col justify-center items-start p-8 text-white bg-black bg-opacity-50"
+          >
+            <p class="mb-10 text-xl font-bold text-gray-300">
+              {{ slide.name }}
+            </p>
+            <h1 class="text-4xl md:text-6xl font-bold">{{ slide.title }}</h1>
+            <p class="my-10 text-lg text-gray-300">{{ slide.description }}</p>
+            <button
+              class="bg-gold flex justify-between items-center border border-none text-sm rounded-xl text-white px-4 py-3 rounded"
+            >
+              <p>
+                {{ slide.buttonText }}
+              </p>
+              <p class="text-2xl ml-12">→</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</div>
